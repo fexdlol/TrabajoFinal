@@ -1,0 +1,5 @@
+#IGV = IMPORTE NETO * 0.18
+# NETO = TOTAL/(1+0.18)
+#IGV = TOTAL - NETO
+
+
