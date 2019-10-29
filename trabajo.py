@@ -1,5 +1,4 @@
-# NETO = TOTAL/(1+0.18)
-# IGV = TOTAL - NETO
+
 
 
 #Inicio
