@@ -6,7 +6,7 @@ os.system ("cls")
 
 #Inicio
 print("Este programa solo analizará un tipo de producto a la vez")
-
+print("El IGV tiene valor de 18.0%")
 name = input("Ingrese el nombre del producto: ")
 inter = int(input("Ingrese intervalo de tiempo: "))
 while True:
