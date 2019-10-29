@@ -1,5 +1,3 @@
-# NETO = TOTAL/(1+0.18)
-# IGV = TOTAL - NETO
 import os
 
 os.system ("cls")
@@ -21,10 +19,10 @@ while True:
         can = int(input(("Ingrese una cantidad valida: ")))
     else:
         break
-ingr = int(input("Ingrese el ingreso del producto: "))
+ingr = float(input("Ingrese el ingreso del producto: "))
 while True:
     if (ingr <= 0):
-        ingr = int(input(("Ingrese una cantidad valida del ingreso: ")))
+        ingr = float(input(("Ingrese una cantidad valida del ingreso: ")))
     else:
         break
 vend = int(input("Ingrese la cantidad vendida: "))
