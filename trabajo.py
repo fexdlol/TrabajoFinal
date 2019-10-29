@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-
-=======
 import os
->>>>>>> 0f998eef31f116700c3cc30549578dd036fdedcc
-
 os.system ("cls")
 
 #Inicio
