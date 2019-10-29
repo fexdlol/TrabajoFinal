@@ -11,9 +11,9 @@ while True:
         break
 #IGV
 IGV = precio * 0.18
-round(IGV,1)
+IGV = round(IGV,2)
 print("IGV: ", IGV)
 #total
 total = IGV + precio
-round(total,1)
+total = round(total,2)
 print ("Pago total es: ", total)
