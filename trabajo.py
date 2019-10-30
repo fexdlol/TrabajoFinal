@@ -104,8 +104,19 @@ elif (ganancia<0):
     if(ganancia<0 and ganancia>=-30):
         print("Lo recomendable es subir el precio de venta.")
     elif(ganancia<-30 and ganancia>=-50):
-        print("El producto puede ser reemplazado por otro con menos precio de importe.")
+        print("El producto puede ser reemplazado por otro con menos precio de importe o esperar más tiempo.")
     else:
         print("Es recomendable dejar de vender este producto y sus parecidos.")
 else:
     print ("El producto no genera ganacia ni perdida.")
+
+#Resumen
+
+print("Nombre del producto: ",name)
+print("Cantidad importada: ",cantidad)
+print("Cantidad vendida: ",cantidadvend)  
+print("Precio de importe por producto: ", precioimport)
+print("Precio de venta por producto: ", precioventa)
+print("Intervalo de tiempo: ",inter, " ",tiempo)
+print("El IGV del 18% por cada producto: ",IGV)
+
