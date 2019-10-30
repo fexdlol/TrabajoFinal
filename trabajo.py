@@ -34,7 +34,7 @@ while True:
 
 inter = int(input("Ingrese intervalo de tiempo: "))
 while True:
-    if (inter <= 0):
+    if (inter < 0):
         inter = int(input(("Ingrese un intervalo de tiempo valido: ")))
     else:
         break
@@ -59,8 +59,8 @@ print("RECUERDE: El IGV tiene valor de 18.0% por el precio del producto")
 ingreso = 0
 ingreso = cantidadvend * precioventa
 costo = cantidad * precioimport
-Ganancia = 0
-Ganancia = ingreso - costo
+ganancia = 0
+ganancia = ingreso - costo
 
 #IGV
 IGV = precioventa * 0.18
@@ -71,7 +71,5 @@ total = round(total,2)
 
 print("IGV: ", IGV)
 print ("Pago total es: ", total)
-print(Ganancia)
-
 
 #Salida
