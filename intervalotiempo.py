@@ -17,10 +17,10 @@ if (tiempo == "semanal"):
     while True:
         if (inter <= 0):
             inter = int(input(("Ingrese un intervalo de tiempo valido: ")))
-        for inter in range (1,6):
-            break
+        
         else:
-            break
+            for inter in range (1,5):
+                break
 if (tiempo == "mensual"):
     inter = int(input("Ingrese intervalo de tiempo: "))
     while True:
