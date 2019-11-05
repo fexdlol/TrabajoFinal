@@ -37,13 +37,27 @@ while (tiempo == "semanal"):
     if (inter <= 0):
         inter = int(input(("Ingrese un intervalo de tiempo valido: ")))
     else:
-        break
+        if(inter == 1):
+            print("El intervalo de tiempo es de ",inter," semana")
+            tiempo = "semana"
+            break
+        else:
+            print("El intervalo de tiempo es de ",inter," semanas")
+            tiempo = "semanas"
+            break
 
 while (tiempo == "mensual"):
     if (inter <= 0):
         inter = int(input(("Ingrese un intervalo de tiempo valido: ")))
     else:
-        break
+        if(inter == 1):
+            print("El intervalo de tiempo es de ",inter," mes")
+            tiempo = "mes"
+            break
+        else:
+            print("El intervalo de tiempo es de ",inter," meses")
+            tiempo = "mes"
+            break
 
 
 cantidad = int(input("Ingrese la cantidad del producto importado: "))
@@ -91,7 +105,7 @@ if (ganancia>0):
         print("El producto tiene una rentabilidad excelente.")
 elif (ganancia<0):
     print("El producto genera una perdida de: S/.", ganancia,)
-    print("************************** ACCIÓN RECOMENDADA ***************************")
+    print("\n************************** ACCIÓN RECOMENDADA ***************************")
     if(ganancia<0 and ganancia>=-30):
         print("Lo recomendable es subir el precio de venta.")
     elif(ganancia<-30 and ganancia>=-50):
@@ -99,7 +113,9 @@ elif (ganancia<0):
     else:
         print("Es recomendable dejar de vender este producto y sus parecidos.")
 else:
+    print("*****************************************************")
     print ("El producto no genera ganacia ni perdida.")
+    
 
 #Resumen
 print("\n *************************** RESUMEN ***************************")
