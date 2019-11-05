@@ -31,26 +31,16 @@ while True:
         break
     else:
         tiempo = input("Ingrese una opcion valida (semanal/mensual):")
-if (tiempo == "semanal"):
-    inter = int(input("Ingrese intervalo de tiempo: "))
-    while True:
-        if (inter <= 0):
-            inter = int(input(("Ingrese un intervalo de tiempo valido: ")))
-        
-        else:
-            for inter in range (1,5):
-                break
-if (tiempo == "mensual"):
-    inter = int(input("Ingrese intervalo de tiempo: "))
-    while True:
-        if (inter <= 0):
-            inter = int(input(("Ingrese un intervalo de tiempo valido: ")))
-        else:
-            break
 
 inter = int(input("Ingrese intervalo de tiempo: "))
-while True:
-    if (inter < 0):
+while (tiempo == "semanal"):
+    if (inter <= 0):
+        inter = int(input(("Ingrese un intervalo de tiempo valido: ")))
+    else:
+        break
+
+while (tiempo == "mensual"):
+    if (inter <= 0):
         inter = int(input(("Ingrese un intervalo de tiempo valido: ")))
     else:
         break
@@ -85,12 +75,12 @@ IGV = round(IGV,2)
 total = IGV + precioventa
 total = round(total,2)
 
-print("IGV: ", IGV)
 print ("Pago total es: ", total)
 
 #Salida
 if (ganancia>0):
     print("El producto genera una ganacia de: S/.",ganancia )
+    print("\n************************** FELICICIDADES ***************************")
     if(ganancia>0 and ganancia<=10):
         print("El producto tiene una rentabilidad buena.")
     elif(ganancia>10 and ganancia<=30):
@@ -101,6 +91,7 @@ if (ganancia>0):
         print("El producto tiene una rentabilidad excelente.")
 elif (ganancia<0):
     print("El producto genera una perdida de: S/.", ganancia,)
+    print("************************** ACCIÓN RECOMENDADA ***************************")
     if(ganancia<0 and ganancia>=-30):
         print("Lo recomendable es subir el precio de venta.")
     elif(ganancia<-30 and ganancia>=-50):
@@ -111,7 +102,7 @@ else:
     print ("El producto no genera ganacia ni perdida.")
 
 #Resumen
-
+print("\n *************************** RESUMEN ***************************")
 print("Nombre del producto: ",name)
 print("Cantidad importada: ",cantidad)
 print("Cantidad vendida: ",cantidadvend)  
