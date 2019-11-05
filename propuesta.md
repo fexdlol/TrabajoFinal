@@ -13,7 +13,7 @@ que se ingrese en dicho programa y a la vez mostrará la rentabilidad del produc
 * Dependiendo del rango de ganancia o perdida mandara un mensaje con acciones recomendadas o con un mensaje de estabilidad.
 * El programa pedirá los intervalos de tiempo, ya sea semanal o mensual.
 * Pedirá los datos del producto ingresado (cantidad que se compró,cantidad que vendió mediante el intervalo dado y   el ingreso)
-* 
+
 
  ## División del proyecto:
 
