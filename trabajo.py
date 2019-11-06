@@ -34,9 +34,10 @@ while True:
 
 #Inicio
 print("*****Este programa solo analizará un tipo de producto a la vez******")
-Productos = []
+productos = []
 
 name = input("Ingrese el nombre del producto: ")
+productos.append(name)
 
 precioventa = float(input("Ingrese precio de venta del producto: "))
 while True:
@@ -44,6 +45,7 @@ while True:
         precioventa = float(input(("Ingrese un precio de venta valido: ")))
     else:
         break
+productos.append(precioventa)
 
 #precioimport = es el precio real del producto cuando se importa
 precioimport = float(input("Ingrese precio fijo: "))
@@ -52,6 +54,7 @@ while True:
         precioimport = float(input(("Ingrese un precio fijo valido: ")))
     else:
         break
+productos.append(precioimport)
 
 tiempo = input("¿Que intervalo de tiempo quiere eleguir?(semanal/mensual): ")
 while True:
@@ -91,13 +94,13 @@ while (tiempo == "mensual"):
             tiempo = "mes"
             break
 
-
 cantidad = int(input("Ingrese la cantidad del producto importado: "))
 while True:
     if (cantidad <= 0):
         cantidad = int(input(("Ingrese una cantidad valida: ")))
     else:
         break
+productos.append(cantidad)
 
 cantidadvend = int(input("Ingrese la cantidad vendida: "))
 while True:
@@ -105,6 +108,7 @@ while True:
         cantidadvend = int(input(("Ingrese una cantidad valida de la venta: ")))
     else:
         break
+productos.append(cantidadvend)
 
 print("RECUERDE: El IGV tiene valor de 18.0% por el precio del producto")
 #Proceso
@@ -150,12 +154,7 @@ else:
     
 
 #Resumen
-print("\n *************************** RESUMEN ***************************")
-print("Nombre del producto: ",name)
-print("Cantidad importada: ",cantidad)
-print("Cantidad vendida: ",cantidadvend)  
-print("Precio de importe por producto: ", precioimport)
-print("Precio de venta por producto: ", precioventa)
+print("\n *************************** RESUMEN ***************************")  
+print("El producto es: ", productos[0], "\nPrecio de venta por producto: ", productos[1],"\nPrecio de importe por producto: ", productos[2] ,"\nCantidad importada: ", productos[3],"\nCantidad vendida: ",productos[4] )
 print("Intervalo de tiempo: ",inter, " ",tiempo)
 print("El IGV del 18% por cada producto: ",IGV)
-
