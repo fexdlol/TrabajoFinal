@@ -7,8 +7,8 @@ import getpass
  
 #declaracion de variables
 print("******Bienvenido al sistema de analisis de productos******")
-usuarios = ('Joshmi','Bymathi','Fexlol')
-contraseña = ('1234')
+usuarios = "admin"
+contraseña = "1234"
  
 #declaracion de funciones
 def login(usuario,passw):
@@ -31,130 +31,130 @@ while True:
         print('ERROR! Usted no esta registrado >:v .')
 
 
-
 #Inicio
 print("*****Este programa solo analizará un tipo de producto a la vez******")
-productos = []
-
-name = input("Ingrese el nombre del producto: ")
-productos.append(name)
-
-precioventa = float(input("Ingrese precio de venta del producto: "))
 while True:
-    if (precioventa <= 0):
-        precioventa = float(input(("Ingrese un precio de venta valido: ")))
-    else:
-        break
-productos.append(precioventa)
+    productos = []
+    name = input("Ingrese el nombre del producto: ")
+    productos.append(name)
 
-#precioimport = es el precio real del producto cuando se importa
-precioimport = float(input("Ingrese precio fijo: "))
-while True:
-    if (precioimport <= 0):
-        precioimport = float(input(("Ingrese un precio fijo valido: ")))
-    else:
-        break
-productos.append(precioimport)
+    precioventa = float(input("Ingrese precio de venta del producto: "))
+    while True:
+        if (precioventa <= 0):
+            precioventa = float(input(("Ingrese un precio de venta valido: ")))
+        else:
+            break
+    productos.append(precioventa)
 
-tiempo = input("¿Que intervalo de tiempo quiere eleguir?(semanal/mensual): ")
-while True:
-    if (tiempo == "semanal"):
-        print("Eliguío la opcion semanal")
-        break
-    if (tiempo == "mensual"):
-        print("Eliguío la opcion mensual")
-        break
-    else:
-        tiempo = input("Ingrese una opcion valida (semanal/mensual):")
+    #precioimport = es el precio real del producto cuando se importa
+    precioimport = float(input("Ingrese precio fijo: "))
+    while True:
+        if (precioimport <= 0):
+            precioimport = float(input(("Ingrese un precio fijo valido: ")))
+        else:
+            break
+    productos.append(precioimport)
 
-inter = int(input("Ingrese intervalo de tiempo: "))
-while (tiempo == "semanal"):
-    if (inter <= 0):
-        inter = int(input(("Ingrese un intervalo de tiempo valido: ")))
-    else:
-        if(inter == 1):
-            print("El intervalo de tiempo es de ",inter," semana")
-            tiempo = "semana"
+    tiempo = input("¿Que intervalo de tiempo quiere eleguir?(semanal/mensual): ")
+    while True:
+        if (tiempo == "semanal"):
+            print("Eliguío la opcion semanal")
+            break
+        if (tiempo == "mensual"):
+            print("Eliguío la opcion mensual")
             break
         else:
-            print("El intervalo de tiempo es de ",inter," semanas")
-            tiempo = "semanas"
-            break
+            tiempo = input("Ingrese una opcion valida (semanal/mensual):")
 
-while (tiempo == "mensual"):
-    if (inter <= 0):
-        inter = int(input(("Ingrese un intervalo de tiempo valido: ")))
-    else:
-        if(inter == 1):
-            print("El intervalo de tiempo es de ",inter," mes")
-            tiempo = "mes"
-            break
+    inter = int(input("Ingrese intervalo de tiempo: "))
+    while (tiempo == "semanal"):
+        if (inter <= 0):
+            inter = int(input(("Ingrese un intervalo de tiempo valido: ")))
         else:
-            print("El intervalo de tiempo es de ",inter," meses")
-            tiempo = "mes"
+            if(inter == 1):
+                print("El intervalo de tiempo es de ",inter," semana")
+                tiempo = "semana"
+                break
+            else:
+                print("El intervalo de tiempo es de ",inter," semanas")
+                tiempo = "semanas"
+                break
+
+    while (tiempo == "mensual"):
+        if (inter <= 0):
+            inter = int(input(("Ingrese un intervalo de tiempo valido: ")))
+        else:
+            if(inter == 1):
+                print("El intervalo de tiempo es de ",inter," mes")
+                tiempo = "mes"
+                break
+            else:
+                print("El intervalo de tiempo es de ",inter," meses")
+                tiempo = "mes"
+                break
+
+    cantidad = int(input("Ingrese la cantidad del producto importado: "))
+    while True:
+        if (cantidad <= 0):
+            cantidad = int(input(("Ingrese una cantidad valida: ")))
+        else:
             break
+    productos.append(cantidad)
 
-cantidad = int(input("Ingrese la cantidad del producto importado: "))
-while True:
-    if (cantidad <= 0):
-        cantidad = int(input(("Ingrese una cantidad valida: ")))
+    cantidadvend = int(input("Ingrese la cantidad vendida: "))
+    while True:
+        if (cantidadvend <= 0):
+            cantidadvend = int(input(("Ingrese una cantidad valida de la venta: ")))
+        else:
+            break
+    productos.append(cantidadvend)
+
+    print("RECUERDE: El IGV tiene valor de 18.0% por el precio del producto")
+    #Proceso
+    ingreso = 0
+    ingreso = cantidadvend * precioventa
+    costo = cantidad * precioimport
+    ganancia = 0
+    ganancia = ingreso - costo
+
+    #IGV
+    IGV = precioventa * 0.18
+    IGV = round(IGV,2)
+    #total
+    total = IGV + precioventa
+    total = round(total,2)
+
+    print ("Pago total es: ", total)
+
+    #Salida
+    if (ganancia>0):
+        print("El producto genera una ganacia de: S/.",ganancia )
+        print("\n************************** FELICICIDADES ***************************")
+        if(ganancia>0 and ganancia<=10):
+            print("El producto tiene una rentabilidad buena.")
+        elif(ganancia>10 and ganancia<=30):
+            print("El producto tiene una rentabilidad aceptable.")
+        elif(ganancia>30 and ganancia<=50):
+            print("El producto tiene una rentabilidad genial.")
+        else:
+            print("El producto tiene una rentabilidad excelente.")
+    elif (ganancia<0):
+        print("El producto genera una perdida de: S/.", ganancia,)
+        print("\n************************** ACCIÓN RECOMENDADA ***************************")
+        if(ganancia<0 and ganancia>=-30):
+            print("Lo recomendable es subir el precio de venta.")
+        elif(ganancia<-30 and ganancia>=-50):
+            print("El producto puede ser reemplazado por otro con menos precio de importe o esperar más tiempo.")
+        else:
+            print("Es recomendable dejar de vender este producto y sus parecidos.")
     else:
-        break
-productos.append(cantidad)
+        print("*****************************************************")
+        print ("El producto no genera ganacia ni perdida.")
+        
 
-cantidadvend = int(input("Ingrese la cantidad vendida: "))
-while True:
-    if (cantidadvend <= 0):
-        cantidadvend = int(input(("Ingrese una cantidad valida de la venta: ")))
-    else:
-        break
-productos.append(cantidadvend)
-
-print("RECUERDE: El IGV tiene valor de 18.0% por el precio del producto")
-#Proceso
-ingreso = 0
-ingreso = cantidadvend * precioventa
-costo = cantidad * precioimport
-ganancia = 0
-ganancia = ingreso - costo
-
-#IGV
-IGV = precioventa * 0.18
-IGV = round(IGV,2)
-#total
-total = IGV + precioventa
-total = round(total,2)
-
-print ("Pago total es: ", total)
-
-#Salida
-if (ganancia>0):
-    print("El producto genera una ganacia de: S/.",ganancia )
-    print("\n************************** FELICICIDADES ***************************")
-    if(ganancia>0 and ganancia<=10):
-        print("El producto tiene una rentabilidad buena.")
-    elif(ganancia>10 and ganancia<=30):
-        print("El producto tiene una rentabilidad aceptable.")
-    elif(ganancia>30 and ganancia<=50):
-        print("El producto tiene una rentabilidad genial.")
-    else:
-        print("El producto tiene una rentabilidad excelente.")
-elif (ganancia<0):
-    print("El producto genera una perdida de: S/.", ganancia,)
-    print("\n************************** ACCIÓN RECOMENDADA ***************************")
-    if(ganancia<0 and ganancia>=-30):
-        print("Lo recomendable es subir el precio de venta.")
-    elif(ganancia<-30 and ganancia>=-50):
-        print("El producto puede ser reemplazado por otro con menos precio de importe o esperar más tiempo.")
-    else:
-        print("Es recomendable dejar de vender este producto y sus parecidos.")
-else:
-    print("*****************************************************")
-    print ("El producto no genera ganacia ni perdida.")
+    #Resumen
+    print("\n *************************** RESUMEN ***************************")  
+    print("El producto es: ", productos[0], "\nPrecio de venta por producto: ", productos[1],"\nPrecio de importe por producto: ", productos[2] ,"\nCantidad importada: ", productos[3],"\nCantidad vendida: ",productos[4] )
+    print("Intervalo de tiempo: ",inter, " ",tiempo)
+    print("El IGV del 18% por cada producto: ",IGV)
     
-
-#Resumen
-print("\n *************************** RESUMEN ***************************")  
-print("El producto es: ", productos[0], "\nPrecio de venta por producto: ", productos[1],"\nPrecio de importe por producto: ", productos[2] ,"\nCantidad importada: ", productos[3],"\nCantidad vendida: ",productos[4] )
-print("Intervalo de tiempo: ",inter, " ",tiempo)
-print("El IGV del 18% por cada producto: ",IGV)
