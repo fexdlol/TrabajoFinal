@@ -1,5 +1,37 @@
+import time
 import os
-os.system ("cls")
+os.system("cls")
+import sys
+import sqlite3
+import getpass
+ 
+#declaracion de variables
+ 
+usuarios = ('Joshmi','Bysenpai','Fexlol')
+contraseña = ('pinkyycerebro')
+ 
+#declaracion de funciones
+def login(usuario,passw):
+    if usuario in usuarios:
+        if passw in contraseña:
+            return 1
+        else:
+            print("\n\tLa contraseña no coincide >:v ...\n")
+    else:
+        return 2
+ 
+ #inicializacion de procesos
+usuario=input('Usuario: ')
+passw = getpass.getpass('Contraseña: ')
+ 
+if login(usuario,passw)==1:
+    print('Bienvenido ',usuario)
+else:
+    print('ERROR! Usted no esta registrado >:v .')
+
+
+
+#aqui empezamos pinky
 
 #Inicio
 print("Este programa solo analizará un tipo de producto a la vez")
