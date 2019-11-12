@@ -34,20 +34,32 @@ while True:
 #Inicio
 print("*****Este programa solo analizará un tipo de producto a la vez******")
 while True:
+    archivo = open ("prueba1.csv" , "a")
     productos = []
     name = input("Ingrese el nombre del producto: ")
     productos.append(name)
 
+    archivo.write(name +" \n" )
+   
+
+  
+
     precioventa = float(input("Ingrese precio de venta del producto: "))
+    archivo.write('precio de venta= % s' %precioventa +" \n")
     while True:
         if (precioventa <= 0):
             precioventa = float(input(("Ingrese un precio de venta valido: ")))
-        else:
-            break
+
+        else: 
+            break   
     productos.append(precioventa)
+    
+
+
 
     #precioimport = es el precio real del producto cuando se importa
     precioimport = float(input("Ingrese precio fijo: "))
+    archivo.write('precio fijo= % s' %precioimport +" \n")
     while True:
         if (precioimport <= 0):
             precioimport = float(input(("Ingrese un precio fijo valido: ")))
@@ -55,7 +67,9 @@ while True:
             break
     productos.append(precioimport)
 
+
     tiempo = input("¿Que intervalo de tiempo quiere eleguir?(semanal/mensual): ")
+    archivo.write(tiempo +" \n")
     while True:
         if (tiempo == "semanal"):
             print("Eliguío la opcion semanal")
@@ -67,6 +81,7 @@ while True:
             tiempo = input("Ingrese una opcion valida (semanal/mensual):")
 
     inter = int(input("Ingrese intervalo de tiempo: "))
+    archivo.write('Intervalo= % s' %inter +" \n")
     while (tiempo == "semanal"):
         if (inter <= 0):
             inter = int(input(("Ingrese un intervalo de tiempo valido: ")))
@@ -94,6 +109,7 @@ while True:
                 break
 
     cantidad = int(input("Ingrese la cantidad del producto importado: "))
+    archivo.write('Cantidad importado= % s' %cantidad +" \n")
     while True:
         if (cantidad <= 0):
             cantidad = int(input(("Ingrese una cantidad valida: ")))
@@ -102,6 +118,7 @@ while True:
     productos.append(cantidad)
 
     cantidadvend = int(input("Ingrese la cantidad vendida: "))
+    archivo.write('Cantidad Vendida= % s' %cantidadvend +" \n")
     while True:
         if (cantidadvend <= 0):
             cantidadvend = int(input(("Ingrese una cantidad valida de la venta: ")))
@@ -150,11 +167,18 @@ while True:
     else:
         print("*****************************************************")
         print ("El producto no genera ganacia ni perdida.")
-        
-
+    
+    asterisco = "**************"
+    archivo.write(asterisco + "\n")
     #Resumen
     print("\n *************************** RESUMEN ***************************")  
     print("El producto es: ", productos[0], "\nPrecio de venta por producto: ", productos[1],"\nPrecio de importe por producto: ", productos[2] ,"\nCantidad importada: ", productos[3],"\nCantidad vendida: ",productos[4] )
     print("Intervalo de tiempo: ",inter, " ",tiempo)
     print("El IGV del 18% por cada producto: ",IGV)
+    rpta = input("Desea ingresar otro podructo(SI/NO): ")
     
+    if (rpta == "SI" or rpta == "si"):
+        print ("Ingrese otro producto: ")
+    elif (rpta == "NO" or rpta == "no"):
+        break
+        
