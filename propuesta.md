@@ -11,7 +11,6 @@
 * Este es un programa para el ambiente de ventas (Pilar de Sostenibilidad), este programa podrá calcular los ingresos de cada producto que se ingrese en dicho programa y a la vez mostrará la rentabilidad del producto ingresado.
 * Este programa pedirá datos importantes acerca del producto para poder calcular el ingreso.
 * Dependiendo de que si el producto genera una ganancia o perdida, mandará un mensaje con acciones recomendadas.
-* El programa pedirá los intervalos de tiempo, ya sea semanal o mensual.
 * Y finalmente el programa podrá guardaer los datos ingresados en un excel, que está ubicado en los archivos donde se guardó el proyecto. 
 
  ## División del proyecto:
