@@ -66,48 +66,7 @@ while True:
         else:
             break
     productos.append(precioimport)
-
-
-    tiempo = input("¿Que intervalo de tiempo quiere eleguir?(semanal/mensual): ")
-    archivo.write(tiempo +" \n")
-    while True:
-        if (tiempo == "semanal"):
-            print("Eliguío la opcion semanal")
-            break
-        if (tiempo == "mensual"):
-            print("Eliguío la opcion mensual")
-            break
-        else:
-            tiempo = input("Ingrese una opcion valida (semanal/mensual):")
-
-    inter = int(input("Ingrese intervalo de tiempo: "))
-    archivo.write('Intervalo= % s' %inter +" \n")
-    while (tiempo == "semanal"):
-        if (inter <= 0):
-            inter = int(input(("Ingrese un intervalo de tiempo valido: ")))
-        else:
-            if(inter == 1):
-                print("El intervalo de tiempo es de ",inter," semana")
-                tiempo = "semana"
-                break
-            else:
-                print("El intervalo de tiempo es de ",inter," semanas")
-                tiempo = "semanas"
-                break
-
-    while (tiempo == "mensual"):
-        if (inter <= 0):
-            inter = int(input(("Ingrese un intervalo de tiempo valido: ")))
-        else:
-            if(inter == 1):
-                print("El intervalo de tiempo es de ",inter," mes")
-                tiempo = "mes"
-                break
-            else:
-                print("El intervalo de tiempo es de ",inter," meses")
-                tiempo = "mes"
-                break
-
+    
     cantidad = int(input("Ingrese la cantidad del producto importado: "))
     archivo.write('Cantidad importado= % s' %cantidad +" \n")
     while True:
@@ -173,7 +132,6 @@ while True:
     #Resumen
     print("\n *************************** RESUMEN ***************************")  
     print("El producto es: ", productos[0], "\nPrecio de venta por producto: ", productos[1],"\nPrecio de importe por producto: ", productos[2] ,"\nCantidad importada: ", productos[3],"\nCantidad vendida: ",productos[4] )
-    print("Intervalo de tiempo: ",inter, " ",tiempo)
     print("El IGV del 18% por cada producto: ",IGV)
     rpta = input("Desea ingresar otro podructo(SI/NO): ")
     
