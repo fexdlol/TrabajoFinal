@@ -138,5 +138,6 @@ while True:
     if (rpta == "SI" or rpta == "si"):
         print ("Ingrese otro producto: ")
     elif (rpta == "NO" or rpta == "no"):
+        print("Aplicacion finalizada")
         break
         
